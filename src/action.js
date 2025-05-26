@@ -6,7 +6,7 @@ const REPO_URL = core.getInput("current-repo-url") || 'https://github.com/Varcod
 const COMPOSE_FILE = core.getInput("docker-compose-file-name") || "docker-compose.yml";
 const ENV = []
 const BRANCH_NAME_REF = core.getInput('branch-ref') || "refs/heads/dev";
-const GIT_USER = core.getInput("git-user") || "VerioN1";
+const GIT_USER = core.getInput("git-user") || "amooney-varcode";
 const GIT_TOKEN = core.getInput("git-token");
 
 const baseURL = core.getInput("deployment-env");
