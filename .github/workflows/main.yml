@@ -1,0 +1,20 @@
+name: Portainer Production Deploy
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - uses: ./
+        with:
+          project-name: 'camcode-production-demo'
+          deployment-env: 'production'
+          current-repo-url: 'https://github.com/Varcode-STMS/cam-code'
+          branch-ref: 'refs/heads/main'

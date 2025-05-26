@@ -1,0 +1,29 @@
+name: "Deploy To Portainer"
+description: "Deploy with creds"
+author: "Varcode"
+
+inputs:
+  project-name:
+    description: "Target project name to deploy"
+    default: "camcode-demo1"
+  deployment-env:
+    description: "develop Or prod"
+    default: "develop"
+  current-repo-url:
+    description: "current repository url"
+    default: "https://github.com/Varcode-STMS/cam-code"
+  branch-ref:
+    description: "current repository branch ref"
+    default: "refs/heads/main"
+  git-user:
+    description: "github Username"
+    default: "username"
+  git-token:
+    description: "Github private repo access token"
+    default: "-----"
+  docker-compose-file-name:
+    description: "Compose file name for deployment"
+    default: "docker-compose.yml"
+runs:
+  using: "node20"
+  main: "dist/index.js"

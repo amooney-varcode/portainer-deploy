@@ -1,0 +1,18 @@
+{
+  "name": "portainer-deploy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node ./src/action.js",
+    "build": "ncc build src/action.js -o dist",
+    "test": "deno run --allow-env --allow-net --allow-read --allow-write -A  index.js "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@vercel/ncc": "^0.36.0",
+    "axios": "^1.2.1"
+  }
+}
